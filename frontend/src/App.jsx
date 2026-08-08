@@ -38,31 +38,30 @@ const App = () => {
 
 return (
     <div>
-        {!user && <GoogleLoginButton />}
 
-        {user && (
-            <>
-                <p>Welcome, {user.name}</p>
-                <p>{user.email}</p>
-                <Logout />
-            </>
-        )}
+<ToastContainer
+    position="top-right"
+    autoClose={2000}
+    hideProgressBar={false}
+    newestOnTop={false}
+    closeOnClick={false}
+    rtl={false}
+    pauseOnFocusLoss
+    draggable
+    pauseOnHover
+    theme="light"
+    transition={Bounce}
+/>
 
-        <ToastContainer
-            position="top-right"
-            autoClose={2000}
-            hideProgressBar={false}
-            newestOnTop={false}
-            closeOnClick={false}
-            rtl={false}
-            pauseOnFocusLoss
-            draggable
-            pauseOnHover
-            theme="light"
-            transition={Bounce}
-        />
-
+<div className="app-layout">
+    <div className="main-content">
         <h1>To-Do App</h1>
+
+        {!user && (
+            <div className="google-login">
+                <GoogleLoginButton />
+            </div>
+        )}
 
         {user && (
             <>
@@ -86,6 +85,20 @@ return (
             </>
         )}
     </div>
+
+    {user && (
+        <div className="user-section">
+            <div className="user-info">
+                <span className="user-name">Welcome, {user.name}</span>
+                <span className="user-email">{user.email}</span>
+            </div>
+
+            <Logout />
+        </div>
+    )}
+</div>
+</div>
+
 );
 }
 
