@@ -30,7 +30,8 @@ const AddTasks = ({ reload, URL, setReload, id, setId, tasks }) => {
         { name, description },
         {
           headers: {
-            "Content-Type": "application/json",
+              "Content-Type": "application/json",
+              Authorization: `Bearer ${localStorage.getItem("token")}`,
           },
         },
       );
@@ -42,7 +43,8 @@ const AddTasks = ({ reload, URL, setReload, id, setId, tasks }) => {
         { name, description },
         {
           headers: {
-            "Content-Type": "application/json",
+              "Content-Type": "application/json",
+              Authorization: `Bearer ${localStorage.getItem("token")}`,
           },
         },
       );

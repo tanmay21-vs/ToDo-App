@@ -9,6 +9,11 @@ const taskBioSchema = new mongoose.Schema({
             type: String,
             required: true,
     },
+    userId: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "User",
+        required: true,
+    },
     createdTime: {
         type: Date,
         default: Date.now

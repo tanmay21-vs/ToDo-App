@@ -10,6 +10,7 @@ const Tasks = ({ tasks, URL, reload, setReload, id, setId}) => {
       {
         headers: {
           "Content-Type": "application/json",
+          Authorization: `Bearer ${localStorage.getItem("token")}`,
         },
       }
     );
