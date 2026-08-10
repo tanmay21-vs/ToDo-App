@@ -6,7 +6,7 @@ const GoogleLoginButton = () => {
     const handleSuccess = async (credentialResponse) => {
         try {
             const api = await axios.post(
-                "http://localhost:2000/auth/google",
+                "https://todo-app-0l64.onrender.com/auth/google",
                 {
                     credential: credentialResponse.credential,
                 },

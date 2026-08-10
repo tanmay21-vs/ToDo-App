@@ -14,7 +14,7 @@ const App = () => {
   const [id, setId] = useState("");
   const [user, setUser] = useState(() => JSON.parse(localStorage.getItem("user")));
 
-  const URL = "http://localhost:2000";
+  const URL = "https://todo-app-0l64.onrender.com";
 
   useEffect(() => {
     if (!localStorage.getItem("token")) {
